@@ -1,0 +1,17 @@
+{
+    "name": "jv232/htdocs",
+    "description": "Projeto para ceres_Investimentos",
+    "autoload": {
+        "psr-4": {
+            "Jv232\\Htdocs\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "João Victor Lourenço Barbosa Bernardo Diniz",
+            "email": "87540912+Eenar@users.noreply.github.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
