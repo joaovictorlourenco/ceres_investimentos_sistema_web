@@ -1,3 +1,11 @@
+<?php
+
+require 'connect.php';
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -22,14 +30,14 @@
     <nav>
       <div class="navbar-wrapper">
         <div class="logo">
-          <a href="home.html"
+          <a href="home.php"
             ><img src="assets/logo.png" alt="Logo"
           /></a>
         </div>
         <div class="navigation">
           <ul>
             <div class="side-a-side">
-              <a href="home.php">Voltar</a>
+              <a href="#"> Voltar</a>
             </div>
           </ul>
         </div>
@@ -39,7 +47,7 @@
   <body>
     <main>
       <div class="container">
-        <form method="post">
+        <form method="post" action="insert_user.php">
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputName">Nome</label>
@@ -47,7 +55,9 @@
                 type="text"
                 class="form-control"
                 id="inputName"
+                name= "name"
                 placeholder="Nome"
+                required
               />
             </div>
             <div class="form-group col-md-6">
@@ -56,7 +66,9 @@
                 type="email"
                 class="form-control"
                 id="inputEmail"
+                name="email"
                 placeholder="Email"
+                required
               />
             </div>
           </div>
@@ -68,6 +80,10 @@
                 class="form-control"
                 id="inputCell"
                 placeholder="34 9 9972-9839"
+                name="cell"
+                required
+                maxlength="14"
+                
               />
             </div>
             <div class="form-group col-md-6">
@@ -77,6 +93,8 @@
                 class="form-control"
                 id="inputPassword"
                 placeholder="Senha"
+                name="password"
+                required
               />
             </div>
           </div>
@@ -87,6 +105,10 @@
               class="form-control"
               id="inputCPF"
               placeholder="000.000.000-00"
+              name="CPF"
+              required
+              onkeyup="mascara('###.###.###-##',this,event,true)"
+              maxlength="14"
             />
           </div>
           <div class="form-row">
@@ -97,12 +119,14 @@
                 class="form-control"
                 id="inputCity"
                 placeholder="Uberaba"
+                name="city"
+                required
               />
             </div>
 
             <div class="form-group col-md-4">
-              <label for="inputEstado">Estado...</label>
-              <select id="inputEstado" class="form-control">
+              <label for="inputEstado">Estado</label>
+              <select id="inputEstado" class="form-control" name="state" required>
                 <option selected>Opção</option>
                 <option value="Acre">Acre - AC</option>
                 <option value="Alagoas">Alagoas - AL</option>
@@ -146,10 +170,14 @@
                 class="form-control"
                 id="inputCEP"
                 placeholder="38022-190"
+                name="CEP"
+                required
+                onkeyup="mascara('#####-###',this,event,true)"
+                maxlength="9"
               />
             </div>
           </div>
-          <button type="submit" class="btn btn-primary">Entrar</button>
+          <button type="submit" class="btn btn-primary">Cadastrar</button>
         </form>
       </div>
     </main>
@@ -168,5 +196,7 @@
       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
       crossorigin="anonymous"
     ></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/mask.js"></script>
   </body>
 </html>

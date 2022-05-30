@@ -1,3 +1,17 @@
+<?php
+
+    session_start();
+
+  
+    $user['name'] = $_SESSION['user'];
+    var_dump($user);
+
+    if (!isset($_SESSION['user'])) {
+        header("Location: login.php");
+        exit();
+      }
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -15,21 +29,20 @@
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
     crossorigin="anonymous"
   />
-    <title>Home</title>
+    <title>Dashboard</title>
   </head>
   <header>
     <nav>
       <div class="navbar-wrapper">
         <div class="logo">
-          <a href="home.php"
+          <a href="dashboard.php"
             ><img src="assets/logo.png" alt="Logo" width="100px"
           /></a>
         </div>
         <div class="navigation">
           <ul>
             <div class="side-a-side">
-              <a href="login.php">Login</a>
-              <a href="cad.php">Cadastro</a>
+              <a id="logout" href="logout.php">Deslogar</a>
             </div>
           </ul>
         </div>
@@ -37,7 +50,10 @@
     </nav>
   </header>
   <body>
-    <div class="mainMensage"><h2>Bem vindo ao Sistema Web da Ceres</h2></div>
+    <div class="mainMensage">
+        <h2>Seja bem vindo ao sistema Ceres Cliente : <?php if(isset($user)){echo ucfirst($user['name']);}?></h2>
+        <div class="infos"></div>
+    </div>
     <script src="index.js"></script>
   </body>
 </html>

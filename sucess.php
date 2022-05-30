@@ -28,8 +28,7 @@
         <div class="navigation">
           <ul>
             <div class="side-a-side">
-              <a href="login.php">Login</a>
-              <a href="cad.php">Cadastro</a>
+              <a href="home.php">Home</a>
             </div>
           </ul>
         </div>
@@ -37,7 +36,9 @@
     </nav>
   </header>
   <body>
-    <div class="mainMensage"><h2>Bem vindo ao Sistema Web da Ceres</h2></div>
+    <div class="mainMensage"><h2>Cadastrado com Sucesso</h2>
+    <a href="login.php" class="btn"> Clique aqui para logar </a> 
+</div>
     <script src="index.js"></script>
   </body>
 </html>
