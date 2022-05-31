@@ -21,7 +21,7 @@
     <nav>
       <div class="navbar-wrapper">
         <div class="logo">
-          <a href="home.php"
+          <a href="index.php"
             ><img src="assets/logo.png" alt="Logo" width="100px"
           /></a>
         </div>

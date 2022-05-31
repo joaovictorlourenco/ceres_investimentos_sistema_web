@@ -34,7 +34,6 @@ nav{
 }
 .side-a-side{
 
-
     display: flex;
     height: 80px;
     width: auto;
@@ -158,6 +157,7 @@ nav{
     /* background-color: var(--orange-100)!important; */
 
 }
+
 #logout{
 
     color: var(--red-100)!important;

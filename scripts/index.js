@@ -12,11 +12,74 @@ cel.addEventListener("keydown", (e) => {
   
   e.target.value = celInputValue;
 });
-/* Confirma */
+/* Confirma CPF */
 
+function getCPF(){
 
-function confirm(){
+  const inputCPF = document.querySelector("#inputCPF")
+  const btn = document.querySelector("#btn")
 
-  confirm("Você pode perder as informações do formulario deseja mesmo sair?")
+  let CPF = inputCPF.value
 
-} 
+   result = validarCPF(CPF)
+
+  if(result){
+    alert("CPF É VALIDO")
+    btn.removeAttribute('disabled','')
+
+  }else{
+
+    alert("O CPF É INVÁLIDO")
+    btn.setAttribute('disabled','')
+    
+  }
+
+}
+
+function validatePass(){
+  const getBarra = document.querySelector("#barra")
+  const getBarra1 = document.querySelector("#barra_1")
+  const getBarra2 = document.querySelector("#barra_2")
+  const password = document.querySelector("#inputPassword").value
+
+   let resultLength = passwordlength(password)
+   
+  /* checa se tem pelo menos 6 caracteres */
+    if(resultLength == false){
+      getBarra.style.color = "red"
+      btn.setAttribute('disabled','')
+    }
+    else{
+      getBarra.style.color = "green"
+      btn.removeAttribute('disabled','')
+    }
+
+    /* checa pelo menos uma letra maiúscula */
+
+    let resultMai = passwordMai(password)
+
+    if(resultMai == false){
+      getBarra1.style.color = "red"
+      btn.setAttribute('disabled','')
+    }else{
+      getBarra1.style.color = "green"
+      btn.removeAttribute('disabled','')
+    }
+
+    /*Verifica se tem pelo menos um caractere especial */
+    let resultEspecial = caracterEspecial(password)
+
+    if(resultEspecial == false){
+
+      getBarra2.style.color = "red"
+      btn.setAttribute('disabled','')
+
+    }else{
+
+      getBarra2.style.color = "green"
+      btn.removeAttribute('disabled','')
+
+    }
+
+    
+}

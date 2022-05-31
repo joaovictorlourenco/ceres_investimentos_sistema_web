@@ -30,14 +30,14 @@ require 'connect.php';
     <nav>
       <div class="navbar-wrapper">
         <div class="logo">
-          <a href="home.php"
+          <a href="index.php"
             ><img src="assets/logo.png" alt="Logo"
           /></a>
         </div>
         <div class="navigation">
           <ul>
             <div class="side-a-side">
-              <a href="#"> Voltar</a>
+              <a href="index.php"> Voltar</a>
             </div>
           </ul>
         </div>
@@ -73,7 +73,7 @@ require 'connect.php';
             </div>
           </div>
           <div class="form-row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-2">
               <label for="inputCell">Telefone</label>
               <input
                 type="text"
@@ -86,7 +86,7 @@ require 'connect.php';
                 
               />
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-2">
               <label for="inputPassword">Senha</label>
               <input
                 type="password"
@@ -94,9 +94,15 @@ require 'connect.php';
                 id="inputPassword"
                 placeholder="Senha"
                 name="password"
+                onkeyup="validatePass()"
                 required
               />
             </div>
+            <div class="side-a-side form-group col-md-8 align-items-center">
+                 <div id="barra" class="col-md-4 ">Pelo menos 6 caracteres</div>
+                <div id="barra_1" class="col-md-4 ">Pelo menos 1 letra maiúscula</div>
+                <div id="barra_2" class="col-md-4 ">Pelo menos 1 caractere especial</div>
+              </div>
           </div>
           <div class="form-group">
             <label for="inputCPF">CPF</label>
@@ -107,6 +113,7 @@ require 'connect.php';
               placeholder="000.000.000-00"
               name="CPF"
               required
+              onblur="getCPF()"
               onkeyup="mascara('###.###.###-##',this,event,true)"
               maxlength="14"
             />
@@ -177,7 +184,7 @@ require 'connect.php';
               />
             </div>
           </div>
-          <button type="submit" class="btn btn-primary">Cadastrar</button>
+          <button type="submit" id="btn" class="btn btn-primary">Cadastrar</button>
         </form>
       </div>
     </main>
@@ -198,5 +205,6 @@ require 'connect.php';
     ></script>
     <script src="scripts/index.js"></script>
     <script src="scripts/mask.js"></script>
+    <script src="scripts/functions.js"></script>
   </body>
 </html>
